@@ -22,7 +22,7 @@ def get_user_groups(user_id):
     try:
         print("..\r")
         response = request(GROUPS_GET, params).json()['response']
-        time.sleep(0.3)
+        time.sleep(0.4)
     except Exception as except_error:
         print('Ошибка: {}'.format(except_error))
     else:
@@ -34,7 +34,7 @@ def get_name_groups(group_id):
     try:
         print("..\r")
         response = request(GROUPS_GET_BY_ID, params).json()['response']
-        time.sleep(0.3)
+        time.sleep(0.4)
     except Exception as except_error:
         print('Ошибка: {}'.format(except_error))
     else:
@@ -48,7 +48,7 @@ def get_members_groups(my_groups, groups):
         params = dict(group_id=group, access_token=TOKEN, v=5.80, filter='friends')
         try:
             response = request(GROUPS_GET_MEMBERS, params).json()['response']
-            time.sleep(0.3)
+            time.sleep(0.4)
         except Exception as except_error:
             print('Ошибка: {}'.format(except_error))
         else:
